@@ -50,12 +50,12 @@
         <link rel="shortcut icon" href="/images/favicon/favicon.ico">
 
         <!-- Prefetching, preloading, prebrowsing -->
-        <link rel="dns-prefetch" href="chanel.com">
+        <!-- <link rel="dns-prefetch" href="chanel.com">
         <link rel="preconnect" href="chanel.com">
         <link rel="prefetch" href="chanel.com">
-        <link rel="prerender" href="chanel.com">
+        <link rel="prerender" href="chanel.com"> -->
 
-        <link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin>
+        <!-- <link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin> -->
 
         <meta name="theme-color" content="#ffffff">
         <script type="application/ld+json">
@@ -104,29 +104,32 @@
           </div>
         </noscript>
 
-        <header class="header header_bg-dark" role="banner">
+        <nav class="header header_bg-dark" role="nav">
             <div class="container">
-                <h1 class="text-center text-light">CHANEL</h1>
+                <div class="row"> 
+                    <div class="col-12 col-lg-3">
+                        <a class="navbar-brand" href="#">
+                            <h1><img src="https://www.chanel.com/fnbv3/design-desktop/img/logo/logo_white@2x.png" alt="Chanel" width="138" height="27"></h1>
+                        </a>
+                    </div>  
+                </div>
             </div>
-        </header>
+        </nav>
         <section class="container">
-            <ul class="listing" role="list">
+            <ul class="listing row" role="list">
                 {% for product in products %}
-                    <li class="listing__item" role="listitem">
-                        <div class="card">
+                    <li class="listing__item col-12 col-sm-6 col-md-6 col-lg-4" role="listitem">
+                        <div class="card listing__item__card">
                             <figure>
                                 <img class="card-img-top" src="/{{ product.image }}" alt="Alt text" />
-                                <figcaption>{{ product.name }}</figcaption>
                             </figure>
                             <div class="card-body">
                                 <span>
-                                    <h1 class="card-title">{{ product.name }}</h1>
+                                    <h2 class="card-title">{{ product.name }}</h2>
                                 </span>
-                                <p class="card-text">{{ product.description }}</p>
-                                <a class="btn btn-primary" href="/products/view/{{ product.id }}">
-                                    <button class="listing__item__button">
-                                        View More
-                                    </button>
+                                <p class="card-text listing__item__card__text">{{ product.description }}</p>
+                                <a class="btn btn-black listing__item__card__more" href="/products/view/{{ product.id }}">
+                                    View More
                                 </a>
                             </div>
                         </div>
@@ -135,8 +138,20 @@
             </ul>
         </section>
 
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" defer></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" defer></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" defer></script>
+        <script>
+            // test translate json
+            jQuery.noConflict();
+            (function ($) {
+                $(document).ready(function () {
+                   $.getJSON('config/translate.json', function(data) {
+                    console.log(data);
+                      $('.listing__item__card__more').html(data.fr.buttonViewMore);
+                   });
+                });
+            });
+        </script>
     </body>
 </html>

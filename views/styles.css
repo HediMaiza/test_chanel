@@ -1,10 +1,61 @@
-.header_bg-dark{
-    padding: 4.375rem 0;
+/* ==========================================================================
+   Theme styles
+   ========================================================================== */
+.btn:focus, .btn:hover{
+    cursor: pointer;
 }
+.btn-black{
+    border: 0 none;
+    background: #000;
+    color: #fff;
+    border-radius: 0;
+    padding-left: 1.125rem;
+    padding-right: 1.125rem;
+}
+.btn-black:focus, .btn-black:hover{
+    background: #444;
+    color: #fff;
+}
+
+figcaption{
+    text-align: center;
+    margin-top: .5rem;
+    font-size: 120%;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.header{
+    padding: 1rem 0;
+}
+.header_bg-dark{
+    background-color: #000;
+}
+.header_bg-dark .container{
+    margin-top: 0;
+}
+.header_bg-dark .nav-link{
+    color: #fff;
+}
+.header_bg-dark .nav-link:hover{
+    color: #ddd;
+}
+
+.navbar-links{
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto 0;
+}
+/* ==========================================================================
+   List Product
+   ========================================================================== */
 
 .listing{
     margin-top: 1.5rem;
     list-style: none;
+    padding: 0;
 }
 
 .listing__item{
@@ -13,12 +64,71 @@
     margin: 5% 0;
 }
 
-.listing__item__button{
-    border: none;
-    background: transparent;
-    color: #FFF;
+.listing__item__card{
+    height: 100%;
+    position: relative;
+}
+.listing__item__card:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,.01);
+    z-index: 1;
 }
 
-.container{
-    margin-top: 1rem;
+.listing__item__card .card-title{
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.listing__item .card-img-top{
+    -webkit-transform: scale(0.9875) translateY(4%);
+    transform: scale(0.9875) translateY(4%);
+    opacity: 0.9;
+    transition: transform 700ms ease-in-out, opacity 500ms ease;
+    will-change: transform;
+}
+.listing__item:hover .card-img-top{
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+}
+
+.listing__item__card__text{
+    margin-bottom: 2.5rem;
+}
+.listing__item__card__more{
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 1;
+}
+@media (max-width: 575px){
+    .card-body{
+        padding-bottom: 3rem;
+    }
+    .listing__item__card__text{
+        display: none; /* for less scroll */
+    }
+}
+/* ==========================================================================
+   List Product
+   ========================================================================== */
+.view-page{
+    margin-top: 2rem;
+}
+.view-page .card{
+    margin-bottom: 2rem;
+}
+.card-block{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
 }
