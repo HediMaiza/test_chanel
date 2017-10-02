@@ -8,5 +8,4 @@ My work :
 - json ld
 - defer js files
 - BEM methodology for css
-
-For information, I don't have visibility about webpages because I was unable to run the local server :/
+- translate.json : trying to use it for list page CTA
