@@ -27,7 +27,7 @@ In the `COMMENTS.md`, we need the following information:
 - Your explanation about your choice of refactoring
 
 ## 3. Publish your code on Github
-To share the new version of the project with us, you need to put the code on a public Github repo and send the link at **florian.guerin@chanel-corp.com**.
+To share the new version of the project with us, you need to put the code on a public Github repo and send the link at **blabla@chanel-corp.com**.
 
 ## Happy Coding!
 If you have any information about this file, you can ask Florian GUERIN or Ibrael ESPINOSA
